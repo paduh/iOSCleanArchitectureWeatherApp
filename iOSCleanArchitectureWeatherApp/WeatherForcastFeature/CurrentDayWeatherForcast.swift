@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - CurrentDayWeatherForcast
 
-public struct CurrentDayWeatherForcast {
+public struct CurrentDayWeatherForcast: Equatable {
     public let id: Int?
     public let weather: [CurrentDayWeather]?
     public let main: Main?
@@ -27,7 +27,7 @@ public struct CurrentDayWeatherForcast {
 
 // MARK: - CurrentDayWeather
 
-public struct CurrentDayWeather: Codable {
+public struct CurrentDayWeather: Equatable {
     public let id: Int?
     public var main: String?
 

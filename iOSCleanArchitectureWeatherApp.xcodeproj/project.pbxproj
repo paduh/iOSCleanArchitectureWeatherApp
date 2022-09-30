@@ -21,6 +21,14 @@
 		54C5326428E79D84000D441D /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5326328E79D84000D441D /* WeatherType.swift */; };
 		54C5326628E79DFE000D441D /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5326528E79DFE000D441D /* Main.swift */; };
 		54C5326828E79EB9000D441D /* RemoteMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5326728E79EB9000D441D /* RemoteMain.swift */; };
+		54C5326D28E7A158000D441D /* RemoteCurrentDayWeatherForcastLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5326928E7A157000D441D /* RemoteCurrentDayWeatherForcastLoader.swift */; };
+		54C5326E28E7A158000D441D /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5326A28E7A157000D441D /* URLSessionHTTPClient.swift */; };
+		54C5326F28E7A158000D441D /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5326B28E7A157000D441D /* HTTPClient.swift */; };
+		54C5327028E7A158000D441D /* CurrentDayWeatherForcastMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5326C28E7A157000D441D /* CurrentDayWeatherForcastMapper.swift */; };
+		54C5327228E7A255000D441D /* CurrentDayWeatherForcastLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5327128E7A255000D441D /* CurrentDayWeatherForcastLoader.swift */; };
+		54C5327728E7AB9E000D441D /* URLSessionHTTPClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5327328E7AB9E000D441D /* URLSessionHTTPClientTest.swift */; };
+		54C5327828E7AB9E000D441D /* RemoteWeatherForcastLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5327428E7AB9E000D441D /* RemoteWeatherForcastLoaderTests.swift */; };
+		54C5327928E7AB9E000D441D /* XCTTestcase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5327628E7AB9E000D441D /* XCTTestcase+MemoryLeakTracking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +67,14 @@
 		54C5326328E79D84000D441D /* WeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherType.swift; sourceTree = "<group>"; };
 		54C5326528E79DFE000D441D /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		54C5326728E79EB9000D441D /* RemoteMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteMain.swift; sourceTree = "<group>"; };
+		54C5326928E7A157000D441D /* RemoteCurrentDayWeatherForcastLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteCurrentDayWeatherForcastLoader.swift; sourceTree = "<group>"; };
+		54C5326A28E7A157000D441D /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		54C5326B28E7A157000D441D /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		54C5326C28E7A157000D441D /* CurrentDayWeatherForcastMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentDayWeatherForcastMapper.swift; sourceTree = "<group>"; };
+		54C5327128E7A255000D441D /* CurrentDayWeatherForcastLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentDayWeatherForcastLoader.swift; sourceTree = "<group>"; };
+		54C5327328E7AB9E000D441D /* URLSessionHTTPClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTest.swift; sourceTree = "<group>"; };
+		54C5327428E7AB9E000D441D /* RemoteWeatherForcastLoaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteWeatherForcastLoaderTests.swift; sourceTree = "<group>"; };
+		54C5327628E7AB9E000D441D /* XCTTestcase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTTestcase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +141,9 @@
 		54C5324328E796A7000D441D /* iOSCleanArchitectureWeatherAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				54C5327528E7AB9E000D441D /* Helpers */,
+				54C5327428E7AB9E000D441D /* RemoteWeatherForcastLoaderTests.swift */,
+				54C5327328E7AB9E000D441D /* URLSessionHTTPClientTest.swift */,
 				54C5324428E796A7000D441D /* iOSCleanArchitectureWeatherAppTests.swift */,
 			);
 			path = iOSCleanArchitectureWeatherAppTests;
@@ -142,6 +161,10 @@
 		54C5325D28E797FD000D441D /* WeatherForcastAPI */ = {
 			isa = PBXGroup;
 			children = (
+				54C5326B28E7A157000D441D /* HTTPClient.swift */,
+				54C5326C28E7A157000D441D /* CurrentDayWeatherForcastMapper.swift */,
+				54C5326928E7A157000D441D /* RemoteCurrentDayWeatherForcastLoader.swift */,
+				54C5326A28E7A157000D441D /* URLSessionHTTPClient.swift */,
 				54C5326128E7986B000D441D /* RemoteCurrentDayWeatherForcast.swift */,
 				54C5326728E79EB9000D441D /* RemoteMain.swift */,
 			);
@@ -151,11 +174,20 @@
 		54C5325E28E79810000D441D /* WeatherForcastFeature */ = {
 			isa = PBXGroup;
 			children = (
+				54C5327128E7A255000D441D /* CurrentDayWeatherForcastLoader.swift */,
 				54C5325F28E79832000D441D /* CurrentDayWeatherForcast.swift */,
 				54C5326328E79D84000D441D /* WeatherType.swift */,
 				54C5326528E79DFE000D441D /* Main.swift */,
 			);
 			path = WeatherForcastFeature;
+			sourceTree = "<group>";
+		};
+		54C5327528E7AB9E000D441D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				54C5327628E7AB9E000D441D /* XCTTestcase+MemoryLeakTracking.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,13 +321,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54C5326D28E7A158000D441D /* RemoteCurrentDayWeatherForcastLoader.swift in Sources */,
+				54C5326E28E7A158000D441D /* URLSessionHTTPClient.swift in Sources */,
 				54C5326028E79832000D441D /* CurrentDayWeatherForcast.swift in Sources */,
 				54C5323228E796A3000D441D /* ViewController.swift in Sources */,
 				54C5326228E7986B000D441D /* RemoteCurrentDayWeatherForcast.swift in Sources */,
 				54C5322E28E796A3000D441D /* AppDelegate.swift in Sources */,
+				54C5326F28E7A158000D441D /* HTTPClient.swift in Sources */,
 				54C5326828E79EB9000D441D /* RemoteMain.swift in Sources */,
+				54C5327028E7A158000D441D /* CurrentDayWeatherForcastMapper.swift in Sources */,
 				54C5326428E79D84000D441D /* WeatherType.swift in Sources */,
 				54C5326628E79DFE000D441D /* Main.swift in Sources */,
+				54C5327228E7A255000D441D /* CurrentDayWeatherForcastLoader.swift in Sources */,
 				54C5323028E796A3000D441D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +342,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				54C5324528E796A7000D441D /* iOSCleanArchitectureWeatherAppTests.swift in Sources */,
+				54C5327828E7AB9E000D441D /* RemoteWeatherForcastLoaderTests.swift in Sources */,
+				54C5327928E7AB9E000D441D /* XCTTestcase+MemoryLeakTracking.swift in Sources */,
+				54C5327728E7AB9E000D441D /* URLSessionHTTPClientTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

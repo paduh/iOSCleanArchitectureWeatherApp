@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Main
 
- public struct Main: Codable {
+ public struct Main: Equatable {
      public let temp: Double?
      public let tempMin: Double?
      public let tempMax: Double?
@@ -20,7 +20,7 @@ import Foundation
         case tempMax = "temp_max"
     }
 
-     init(
+     public init(
         temp: Double?,
         tempMin: Double?,
         tempMax: Double?
