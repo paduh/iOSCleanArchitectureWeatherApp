@@ -10,4 +10,4 @@ jobs:
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_13.0.app && /usr/bin/xcodebuild -version
     - name: Run tests
-      run: xcodebuild test -scheme iOSCleanArchitectureWeatherApp -project iOSCleanArchitectureWeatherApp.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 12 pro Max,OS=15.4' | xcpretty && exit ${PIPESTATUS[0]}
+      run: xcodebuild test -scheme iOSCleanArchitectureWeatherApp -project iOSCleanArchitectureWeatherApp.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 12 pro Max,OS=15.2' | xcpretty && exit ${PIPESTATUS[0]}
