@@ -1,13 +1,18 @@
-name: tests
+name: Swift
 
 on: [push]
 
 jobs:
-  run_tests:
-    runs-on: macos-11
+  build:
+
+    runs-on: macOS-latest
+
     steps:
     - uses: actions/checkout@v1
-    - name: Select Xcode
-      run: sudo xcode-select -switch /Applications/Xcode_13.0.app && /usr/bin/xcodebuild -version
+    - name: Force Xcode 13
+      run: sudo xcode-select -switch /Applications/Xcode_13.3.1.app
     - name: Run tests
-      run: xcodebuild test -scheme iOSCleanArchitectureWeatherApp -project iOSCleanArchitectureWeatherApp.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.0' | xcpretty && exit ${PIPESTATUS[0]}
+      run: xcodebuild clean test -project "MyApp.xcodeproj" -scheme "MyApp" -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest"
+    - name: Build App
+      run: xcodebuild -project "MyApp.xcodeproj" -scheme "MyApp" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
+
