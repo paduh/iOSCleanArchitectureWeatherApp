@@ -8,8 +8,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: install simulator
-      run: xcversion simulators --install='iOS 15.4'
+      run: xcversion simulators --install='iOS 12.4'
     - name: Select Xcode
-      run: sudo xcode-select -switch /Applications/Xcode_13.1.app && /usr/bin/xcodebuild -version
+      run: sudo xcode-select -switch /Applications/Xcode_13.2.1.app && /usr/bin/xcodebuild -version
     - name: Run tests
-      run: xcodebuild test -scheme iOSCleanArchitectureWeatherApp -project iOSCleanArchitectureWeatherApp.xcodeproj -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=15.4" | xcpretty && exit ${PIPESTATUS[0]}
+      run: xcodebuild test -scheme iOSCleanArchitectureWeatherApp -project iOSCleanArchitectureWeatherApp.xcodeproj -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=12.4" | xcpretty && exit ${PIPESTATUS[0]}
