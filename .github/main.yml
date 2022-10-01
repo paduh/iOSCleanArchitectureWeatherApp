@@ -42,3 +42,14 @@ jobs:
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device"
+        
+        - uses: actions/checkout@master
+        - uses: codecov/codecov-action@v3
+        with:
+            token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+            files: ./coverage1.xml,./coverage2.xml # optional
+            flags: unittests # optional
+            name: codecov-umbrella # optional
+            fail_ci_if_error: true # optional (default = false)
+            verbose: true # optional (default = false)
+
