@@ -7,8 +7,6 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v1
-    - name: install simulator
-      run: xcversion simulators --install='iOS 12.4'
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_13.2.1.app && /usr/bin/xcodebuild -version
     - name: Run tests
