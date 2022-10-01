@@ -13,9 +13,6 @@
 		54C5323528E796A3000D441D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54C5323328E796A3000D441D /* Main.storyboard */; };
 		54C5323728E796A7000D441D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C5323628E796A7000D441D /* Assets.xcassets */; };
 		54C5323A28E796A7000D441D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54C5323828E796A7000D441D /* LaunchScreen.storyboard */; };
-		54C5324528E796A7000D441D /* iOSCleanArchitectureWeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5324428E796A7000D441D /* iOSCleanArchitectureWeatherAppTests.swift */; };
-		54C5324F28E796A7000D441D /* iOSCleanArchitectureWeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5324E28E796A7000D441D /* iOSCleanArchitectureWeatherAppUITests.swift */; };
-		54C5325128E796A7000D441D /* iOSCleanArchitectureWeatherAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5325028E796A7000D441D /* iOSCleanArchitectureWeatherAppUITestsLaunchTests.swift */; };
 		54C5326028E79832000D441D /* CurrentDayWeatherForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5325F28E79832000D441D /* CurrentDayWeatherForcast.swift */; };
 		54C5326228E7986B000D441D /* RemoteCurrentDayWeatherForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5326128E7986B000D441D /* RemoteCurrentDayWeatherForcast.swift */; };
 		54C5326428E79D84000D441D /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5326328E79D84000D441D /* WeatherType.swift */; };
@@ -39,13 +36,6 @@
 			remoteGlobalIDString = 54C5322928E796A3000D441D;
 			remoteInfo = iOSCleanArchitectureWeatherApp;
 		};
-		54C5324B28E796A7000D441D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 54C5322228E796A2000D441D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 54C5322928E796A3000D441D;
-			remoteInfo = iOSCleanArchitectureWeatherApp;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -58,10 +48,6 @@
 		54C5323928E796A7000D441D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54C5323B28E796A7000D441D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54C5324028E796A7000D441D /* iOSCleanArchitectureWeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSCleanArchitectureWeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		54C5324428E796A7000D441D /* iOSCleanArchitectureWeatherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSCleanArchitectureWeatherAppTests.swift; sourceTree = "<group>"; };
-		54C5324A28E796A7000D441D /* iOSCleanArchitectureWeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSCleanArchitectureWeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		54C5324E28E796A7000D441D /* iOSCleanArchitectureWeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSCleanArchitectureWeatherAppUITests.swift; sourceTree = "<group>"; };
-		54C5325028E796A7000D441D /* iOSCleanArchitectureWeatherAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSCleanArchitectureWeatherAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		54C5325F28E79832000D441D /* CurrentDayWeatherForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDayWeatherForcast.swift; sourceTree = "<group>"; };
 		54C5326128E7986B000D441D /* RemoteCurrentDayWeatherForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCurrentDayWeatherForcast.swift; sourceTree = "<group>"; };
 		54C5326328E79D84000D441D /* WeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherType.swift; sourceTree = "<group>"; };
@@ -92,13 +78,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		54C5324728E796A7000D441D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -107,7 +86,6 @@
 			children = (
 				54C5322C28E796A3000D441D /* iOSCleanArchitectureWeatherApp */,
 				54C5324328E796A7000D441D /* iOSCleanArchitectureWeatherAppTests */,
-				54C5324D28E796A7000D441D /* iOSCleanArchitectureWeatherAppUITests */,
 				54C5322B28E796A3000D441D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,7 +95,6 @@
 			children = (
 				54C5322A28E796A3000D441D /* iOSCleanArchitectureWeatherApp.app */,
 				54C5324028E796A7000D441D /* iOSCleanArchitectureWeatherAppTests.xctest */,
-				54C5324A28E796A7000D441D /* iOSCleanArchitectureWeatherAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,18 +121,8 @@
 				54C5327528E7AB9E000D441D /* Helpers */,
 				54C5327428E7AB9E000D441D /* RemoteWeatherForcastLoaderTests.swift */,
 				54C5327328E7AB9E000D441D /* URLSessionHTTPClientTest.swift */,
-				54C5324428E796A7000D441D /* iOSCleanArchitectureWeatherAppTests.swift */,
 			);
 			path = iOSCleanArchitectureWeatherAppTests;
-			sourceTree = "<group>";
-		};
-		54C5324D28E796A7000D441D /* iOSCleanArchitectureWeatherAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				54C5324E28E796A7000D441D /* iOSCleanArchitectureWeatherAppUITests.swift */,
-				54C5325028E796A7000D441D /* iOSCleanArchitectureWeatherAppUITestsLaunchTests.swift */,
-			);
-			path = iOSCleanArchitectureWeatherAppUITests;
 			sourceTree = "<group>";
 		};
 		54C5325D28E797FD000D441D /* WeatherForcastAPI */ = {
@@ -200,6 +167,7 @@
 				54C5322628E796A3000D441D /* Sources */,
 				54C5322728E796A3000D441D /* Frameworks */,
 				54C5322828E796A3000D441D /* Resources */,
+				54C5327A28E83887000D441D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -228,24 +196,6 @@
 			productReference = 54C5324028E796A7000D441D /* iOSCleanArchitectureWeatherAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		54C5324928E796A7000D441D /* iOSCleanArchitectureWeatherAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 54C5325A28E796A7000D441D /* Build configuration list for PBXNativeTarget "iOSCleanArchitectureWeatherAppUITests" */;
-			buildPhases = (
-				54C5324628E796A7000D441D /* Sources */,
-				54C5324728E796A7000D441D /* Frameworks */,
-				54C5324828E796A7000D441D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				54C5324C28E796A7000D441D /* PBXTargetDependency */,
-			);
-			name = iOSCleanArchitectureWeatherAppUITests;
-			productName = iOSCleanArchitectureWeatherAppUITests;
-			productReference = 54C5324A28E796A7000D441D /* iOSCleanArchitectureWeatherAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -260,10 +210,6 @@
 						CreatedOnToolsVersion = 13.3.1;
 					};
 					54C5323F28E796A7000D441D = {
-						CreatedOnToolsVersion = 13.3.1;
-						TestTargetID = 54C5322928E796A3000D441D;
-					};
-					54C5324928E796A7000D441D = {
 						CreatedOnToolsVersion = 13.3.1;
 						TestTargetID = 54C5322928E796A3000D441D;
 					};
@@ -284,7 +230,6 @@
 			targets = (
 				54C5322928E796A3000D441D /* iOSCleanArchitectureWeatherApp */,
 				54C5323F28E796A7000D441D /* iOSCleanArchitectureWeatherAppTests */,
-				54C5324928E796A7000D441D /* iOSCleanArchitectureWeatherAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -307,14 +252,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		54C5324828E796A7000D441D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54C5327A28E83887000D441D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-/* End PBXResourcesBuildPhase section */
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		54C5322628E796A3000D441D /* Sources */ = {
@@ -341,19 +299,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54C5324528E796A7000D441D /* iOSCleanArchitectureWeatherAppTests.swift in Sources */,
 				54C5327828E7AB9E000D441D /* RemoteWeatherForcastLoaderTests.swift in Sources */,
 				54C5327928E7AB9E000D441D /* XCTTestcase+MemoryLeakTracking.swift in Sources */,
 				54C5327728E7AB9E000D441D /* URLSessionHTTPClientTest.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		54C5324628E796A7000D441D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				54C5325128E796A7000D441D /* iOSCleanArchitectureWeatherAppUITestsLaunchTests.swift in Sources */,
-				54C5324F28E796A7000D441D /* iOSCleanArchitectureWeatherAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,11 +312,6 @@
 			isa = PBXTargetDependency;
 			target = 54C5322928E796A3000D441D /* iOSCleanArchitectureWeatherApp */;
 			targetProxy = 54C5324128E796A7000D441D /* PBXContainerItemProxy */;
-		};
-		54C5324C28E796A7000D441D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 54C5322928E796A3000D441D /* iOSCleanArchitectureWeatherApp */;
-			targetProxy = 54C5324B28E796A7000D441D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -598,40 +541,6 @@
 			};
 			name = Release;
 		};
-		54C5325B28E796A7000D441D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.perfectaduh.iOSCleanArchitectureWeatherAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = iOSCleanArchitectureWeatherApp;
-			};
-			name = Debug;
-		};
-		54C5325C28E796A7000D441D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.perfectaduh.iOSCleanArchitectureWeatherAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = iOSCleanArchitectureWeatherApp;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -658,15 +567,6 @@
 			buildConfigurations = (
 				54C5325828E796A7000D441D /* Debug */,
 				54C5325928E796A7000D441D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		54C5325A28E796A7000D441D /* Build configuration list for PBXNativeTarget "iOSCleanArchitectureWeatherAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				54C5325B28E796A7000D441D /* Debug */,
-				54C5325C28E796A7000D441D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

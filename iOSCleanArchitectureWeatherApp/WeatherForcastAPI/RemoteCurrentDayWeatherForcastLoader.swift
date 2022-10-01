@@ -12,19 +12,19 @@ import Foundation
 public final class RemoteCurrentDayWeatherForcastLoader: CurrentDayWeatherForcastLoader {
     private let url: URL
     private let client: HTTPClient
-    
+
     public enum Error: Swift.Error {
         case connectivity
         case invalidData
     }
-    
+
     public typealias Result = LoadCurrentDayWeatherForcastResult
-    
+
     public init(url: URL, client: HTTPClient) {
         self.url = url
         self.client = client
     }
-    
+
     public func load(completion: @escaping (Result) -> Void) {
         _ = client.get(from: url, completion: { [weak self] result in
             guard let self = self else { return }
@@ -36,9 +36,9 @@ public final class RemoteCurrentDayWeatherForcastLoader: CurrentDayWeatherForcas
             }
         })
     }
-    
+
     private func map(_ data: Data, from response: HTTPURLResponse) -> Result {
-        
+
         do {
             let items = try CurrentDayWeatherForcastMapper.map(data, from: response)
             return .success(items.toModels())
