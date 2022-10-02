@@ -1,5 +1,5 @@
 //
-//  RemoteCurrentDayWeatherForcastLoader.swift
+//  RemoteCurrentDayWeatherForcastUseCase.swift
 //  iOSCleanArchitectureWeatherApp
 //
 //  Created by Perfect Aduh on 30/09/2022.
@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - RemoteMovieLoader
 
-public final class RemoteCurrentDayWeatherForcastLoader: CurrentDayWeatherForcastLoader {
+public final class RemoteCurrentDayWeatherForcastUseCase: CurrentDayWeatherForcastLoader {
     private let url: URL
     private let client: HTTPClient
 

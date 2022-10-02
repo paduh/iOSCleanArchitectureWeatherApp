@@ -19,7 +19,7 @@ final class CurrentDayWeatherForcastMapper {
                 RemoteCurrentDayWeatherForcast.self,
                 from: data)
         else {
-            throw RemoteCurrentDayWeatherForcastLoader.Error.invalidData
+            throw RemoteCurrentDayWeatherForcastUseCase.Error.invalidData
         }
         return remoteCurrentDayWeatherForcast
     }
