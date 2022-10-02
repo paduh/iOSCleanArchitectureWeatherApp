@@ -1,4 +1,4 @@
-# Weather app iOS - MVVM + Clean Architecture
+# Weather iOS App Using Clean Architecture + MVVM
 
 ## Description
 Weather app is an iOS application built to highlight the Clean Architecture concepts with MVVM
