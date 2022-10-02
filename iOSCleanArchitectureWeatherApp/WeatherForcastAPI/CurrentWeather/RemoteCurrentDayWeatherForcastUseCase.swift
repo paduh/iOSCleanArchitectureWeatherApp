@@ -1,5 +1,5 @@
 //
-//  RemoteCurrentDayWeatherForcastLoader.swift
+//  RemoteCurrentDayWeatherForcastUseCase.swift
 //  iOSCleanArchitectureWeatherApp
 //
 //  Created by Perfect Aduh on 30/09/2022.
@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - RemoteMovieLoader
 
-public final class RemoteCurrentDayWeatherForcastLoader: CurrentDayWeatherForcastLoader {
+public final class RemoteCurrentDayWeatherForcastUseCase: CurrentDayWeatherForcastLoader {
     private let url: URL
     private let client: HTTPClient
 
@@ -53,7 +53,7 @@ private extension RemoteCurrentDayWeatherForcast {
         CurrentDayWeatherForcast(
             id: id,
             weather: weather?.toModels(),
-            main: main?.toMain())
+            main: main?.toMainModels())
     }
 }
 
@@ -65,8 +65,8 @@ private extension Array where Element == RemoteWeather {
     }
 }
 
-private extension RemoteMain {
-    func toMain() -> Main {
+extension RemoteMain {
+    func toMainModels() -> Main {
         Main(temp: temp, tempMin: tempMin, tempMax: tempMax)
     }
 }

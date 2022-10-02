@@ -1,5 +1,6 @@
 // swiftlint: disable force_try
-//  RemoteWeatherForcastLoaderTests.swift
+// swiftlint: disable type_name
+//  RemoteCurrentDayWeatherForcastUseCaseTests.swift
 //  iOSCleanArchitectureWeatherApp
 //
 //  Created by Perfect Aduh on 30/09/2022.
@@ -8,7 +9,7 @@
 import XCTest
 import iOSCleanArchitectureWeatherApp
 
-class RemoteWeatherForcastLoaderTests: XCTestCase {
+class RemoteCurrentDayWeatherForcastUseCaseTests: XCTestCase {
 
     func test_init_doesNotRequestDataFromUrl() {
         let url = URL(string: "any-url.com")!
@@ -82,9 +83,9 @@ class RemoteWeatherForcastLoaderTests: XCTestCase {
 
         let url = URL(string: "any-url")!
         let client = HTTPClientSpy()
-        var sut: RemoteCurrentDayWeatherForcastLoader? = RemoteCurrentDayWeatherForcastLoader(url: url, client: client)
+        var sut: RemoteCurrentDayWeatherForcastUseCase? = RemoteCurrentDayWeatherForcastUseCase(url: url, client: client)
 
-        var capturedResult = [RemoteCurrentDayWeatherForcastLoader.Result]()
+        var capturedResult = [RemoteCurrentDayWeatherForcastUseCase.Result]()
         sut?.load { capturedResult.append($0) }
 
         sut = nil
@@ -99,15 +100,15 @@ class RemoteWeatherForcastLoaderTests: XCTestCase {
         url: URL = URL(string: "any-url.com")!,
         file: StaticString = #filePath,
         line: UInt = #line
-    ) -> (RemoteCurrentDayWeatherForcastLoader, HTTPClientSpy) {
+    ) -> (RemoteCurrentDayWeatherForcastUseCase, HTTPClientSpy) {
         let client = HTTPClientSpy()
-        let sut = RemoteCurrentDayWeatherForcastLoader(url: url, client: client)
+        let sut = RemoteCurrentDayWeatherForcastUseCase(url: url, client: client)
         trackForMemoryLeak(client, file: file, line: line)
         trackForMemoryLeak(sut, file: file, line: line)
         return (sut, client)
     }
 
-    private func failure(_ error: RemoteCurrentDayWeatherForcastLoader.Error) -> LoadCurrentDayWeatherForcastResult {
+    private func failure(_ error: RemoteCurrentDayWeatherForcastUseCase.Error) -> LoadCurrentDayWeatherForcastResult {
         .failure(error)
     }
 
@@ -134,8 +135,8 @@ class RemoteWeatherForcastLoaderTests: XCTestCase {
     }
 
     func expect(
-        _ sut: RemoteCurrentDayWeatherForcastLoader,
-        toCompleteWithResult expectedResult: RemoteCurrentDayWeatherForcastLoader.Result,
+        _ sut: RemoteCurrentDayWeatherForcastUseCase,
+        toCompleteWithResult expectedResult: RemoteCurrentDayWeatherForcastUseCase.Result,
         when action: () -> Void,
         file: StaticString = #filePath,
         line: UInt = #line) {
@@ -147,9 +148,9 @@ class RemoteWeatherForcastLoaderTests: XCTestCase {
             case let (.success(receivedItems), .success(expectedItems)):
                 XCTAssertEqual(receivedItems, expectedItems, file: file, line: line)
             case let (.failure(
-                receivedError as RemoteCurrentDayWeatherForcastLoader.Error
+                receivedError as RemoteCurrentDayWeatherForcastUseCase.Error
             ), (.failure(
-                expectedError as RemoteCurrentDayWeatherForcastLoader.Error))):
+                expectedError as RemoteCurrentDayWeatherForcastUseCase.Error))):
                 XCTAssertEqual(receivedError, expectedError, file: file, line: line)
             default:
                 XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
