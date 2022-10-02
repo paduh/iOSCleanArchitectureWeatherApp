@@ -40,7 +40,7 @@ public final class RemoteFiveDaysWeatherForcastUseCase: FiveDaysWeatherForcastLo
     private func map(_ data: Data, from response: HTTPURLResponse) -> Result {
         do {
             let items = try FiveDaysWeatherForcastMapper.map(data, from: response)
-            return .success(items.toModels())
+            return .success(items.toDomainModels())
         } catch {
             return .failure(error)
         }
@@ -48,7 +48,7 @@ public final class RemoteFiveDaysWeatherForcastUseCase: FiveDaysWeatherForcastLo
 }
 
 private extension Array where Element == RemoteFiveDaysWeatherForcast {
-    func toModels() -> [FiveDaysWeatherForcast] {
+    func toDomainModels() -> [FiveDaysWeatherForcast] {
         map { FiveDaysWeatherForcast(
             main: $0.main?.toMainModels(), weather: $0.weather?.toModels(), dtTxt: $0.dtTxt)}
     }
