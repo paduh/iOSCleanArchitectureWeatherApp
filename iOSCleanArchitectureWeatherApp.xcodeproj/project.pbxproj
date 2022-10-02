@@ -27,6 +27,12 @@
 		54C5327828E7AB9E000D441D /* RemoteWeatherForcastLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5327428E7AB9E000D441D /* RemoteWeatherForcastLoaderTests.swift */; };
 		54C5327928E7AB9E000D441D /* XCTTestcase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5327628E7AB9E000D441D /* XCTTestcase+MemoryLeakTracking.swift */; };
 		54C5327C28E97897000D441D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 54C5327B28E97897000D441D /* README.md */; };
+		54C5328128E9DB37000D441D /* RemoteFiveDaysWeatherForcastUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5328028E9DB37000D441D /* RemoteFiveDaysWeatherForcastUseCaseTests.swift */; };
+		54C5328428E9DD5D000D441D /* RemoteFiveDaysWeatherForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5328328E9DD5D000D441D /* RemoteFiveDaysWeatherForcast.swift */; };
+		54C5328628E9E03F000D441D /* FiveDaysWeatherForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5328528E9E03F000D441D /* FiveDaysWeatherForcast.swift */; };
+		54C5328828E9E0BE000D441D /* FiveDaysWeatherForcastLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5328728E9E0BE000D441D /* FiveDaysWeatherForcastLoader.swift */; };
+		54C5328A28E9E120000D441D /* RemoteFiveDaysWeatherForcastUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5328928E9E11F000D441D /* RemoteFiveDaysWeatherForcastUseCase.swift */; };
+		54C5328C28E9EBBE000D441D /* FiveDaysWeatherForcastMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5328B28E9EBBE000D441D /* FiveDaysWeatherForcastMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +69,12 @@
 		54C5327428E7AB9E000D441D /* RemoteWeatherForcastLoaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteWeatherForcastLoaderTests.swift; sourceTree = "<group>"; };
 		54C5327628E7AB9E000D441D /* XCTTestcase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTTestcase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		54C5327B28E97897000D441D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		54C5328028E9DB37000D441D /* RemoteFiveDaysWeatherForcastUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFiveDaysWeatherForcastUseCaseTests.swift; sourceTree = "<group>"; };
+		54C5328328E9DD5D000D441D /* RemoteFiveDaysWeatherForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFiveDaysWeatherForcast.swift; sourceTree = "<group>"; };
+		54C5328528E9E03F000D441D /* FiveDaysWeatherForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDaysWeatherForcast.swift; sourceTree = "<group>"; };
+		54C5328728E9E0BE000D441D /* FiveDaysWeatherForcastLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDaysWeatherForcastLoader.swift; sourceTree = "<group>"; };
+		54C5328928E9E11F000D441D /* RemoteFiveDaysWeatherForcastUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFiveDaysWeatherForcastUseCase.swift; sourceTree = "<group>"; };
+		54C5328B28E9EBBE000D441D /* FiveDaysWeatherForcastMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDaysWeatherForcastMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +138,7 @@
 				54C5327528E7AB9E000D441D /* Helpers */,
 				54C5327428E7AB9E000D441D /* RemoteWeatherForcastLoaderTests.swift */,
 				54C5327328E7AB9E000D441D /* URLSessionHTTPClientTest.swift */,
+				54C5328028E9DB37000D441D /* RemoteFiveDaysWeatherForcastUseCaseTests.swift */,
 			);
 			path = iOSCleanArchitectureWeatherAppTests;
 			sourceTree = "<group>";
@@ -133,6 +146,7 @@
 		54C5325D28E797FD000D441D /* WeatherForcastAPI */ = {
 			isa = PBXGroup;
 			children = (
+				54C5328228E9DB92000D441D /* FiveDaysWeather */,
 				54C5327E28E9DA83000D441D /* CurrentWeather */,
 				54C5326B28E7A157000D441D /* HTTPClient.swift */,
 				54C5326A28E7A157000D441D /* URLSessionHTTPClient.swift */,
@@ -180,8 +194,20 @@
 		54C5327F28E9DAC7000D441D /* FiveDaysWeatherForcastFeature */ = {
 			isa = PBXGroup;
 			children = (
+				54C5328528E9E03F000D441D /* FiveDaysWeatherForcast.swift */,
+				54C5328728E9E0BE000D441D /* FiveDaysWeatherForcastLoader.swift */,
 			);
 			path = FiveDaysWeatherForcastFeature;
+			sourceTree = "<group>";
+		};
+		54C5328228E9DB92000D441D /* FiveDaysWeather */ = {
+			isa = PBXGroup;
+			children = (
+				54C5328328E9DD5D000D441D /* RemoteFiveDaysWeatherForcast.swift */,
+				54C5328928E9E11F000D441D /* RemoteFiveDaysWeatherForcastUseCase.swift */,
+				54C5328B28E9EBBE000D441D /* FiveDaysWeatherForcastMapper.swift */,
+			);
+			path = FiveDaysWeather;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,11 +337,16 @@
 				54C5326E28E7A158000D441D /* URLSessionHTTPClient.swift in Sources */,
 				54C5326028E79832000D441D /* CurrentDayWeatherForcast.swift in Sources */,
 				54C5323228E796A3000D441D /* ViewController.swift in Sources */,
+				54C5328428E9DD5D000D441D /* RemoteFiveDaysWeatherForcast.swift in Sources */,
+				54C5328828E9E0BE000D441D /* FiveDaysWeatherForcastLoader.swift in Sources */,
 				54C5326228E7986B000D441D /* RemoteCurrentDayWeatherForcast.swift in Sources */,
 				54C5322E28E796A3000D441D /* AppDelegate.swift in Sources */,
 				54C5326F28E7A158000D441D /* HTTPClient.swift in Sources */,
 				54C5326828E79EB9000D441D /* RemoteMain.swift in Sources */,
+				54C5328628E9E03F000D441D /* FiveDaysWeatherForcast.swift in Sources */,
 				54C5327028E7A158000D441D /* CurrentDayWeatherForcastMapper.swift in Sources */,
+				54C5328A28E9E120000D441D /* RemoteFiveDaysWeatherForcastUseCase.swift in Sources */,
+				54C5328C28E9EBBE000D441D /* FiveDaysWeatherForcastMapper.swift in Sources */,
 				54C5326428E79D84000D441D /* WeatherType.swift in Sources */,
 				54C5326628E79DFE000D441D /* Main.swift in Sources */,
 				54C5327228E7A255000D441D /* CurrentDayWeatherForcastLoader.swift in Sources */,
@@ -330,6 +361,7 @@
 				54C5327828E7AB9E000D441D /* RemoteWeatherForcastLoaderTests.swift in Sources */,
 				54C5327928E7AB9E000D441D /* XCTTestcase+MemoryLeakTracking.swift in Sources */,
 				54C5327728E7AB9E000D441D /* URLSessionHTTPClientTest.swift in Sources */,
+				54C5328128E9DB37000D441D /* RemoteFiveDaysWeatherForcastUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
