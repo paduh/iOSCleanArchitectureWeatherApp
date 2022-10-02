@@ -26,6 +26,7 @@
 		54C5327728E7AB9E000D441D /* URLSessionHTTPClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5327328E7AB9E000D441D /* URLSessionHTTPClientTest.swift */; };
 		54C5327828E7AB9E000D441D /* RemoteWeatherForcastLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5327428E7AB9E000D441D /* RemoteWeatherForcastLoaderTests.swift */; };
 		54C5327928E7AB9E000D441D /* XCTTestcase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C5327628E7AB9E000D441D /* XCTTestcase+MemoryLeakTracking.swift */; };
+		54C5327C28E97897000D441D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 54C5327B28E97897000D441D /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		54C5327328E7AB9E000D441D /* URLSessionHTTPClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTest.swift; sourceTree = "<group>"; };
 		54C5327428E7AB9E000D441D /* RemoteWeatherForcastLoaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteWeatherForcastLoaderTests.swift; sourceTree = "<group>"; };
 		54C5327628E7AB9E000D441D /* XCTTestcase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTTestcase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		54C5327B28E97897000D441D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		54C5322128E796A2000D441D = {
 			isa = PBXGroup;
 			children = (
+				54C5327B28E97897000D441D /* README.md */,
 				54C5322C28E796A3000D441D /* iOSCleanArchitectureWeatherApp */,
 				54C5324328E796A7000D441D /* iOSCleanArchitectureWeatherAppTests */,
 				54C5322B28E796A3000D441D /* Products */,
@@ -241,6 +244,7 @@
 			files = (
 				54C5323A28E796A7000D441D /* LaunchScreen.storyboard in Resources */,
 				54C5323728E796A7000D441D /* Assets.xcassets in Resources */,
+				54C5327C28E97897000D441D /* README.md in Resources */,
 				54C5323528E796A3000D441D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

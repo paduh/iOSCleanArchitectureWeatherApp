@@ -13,3 +13,6 @@ coverage:
         threshold: 0.02
         only_pulls: true
     patch: off
+    
+codecov:
+  bot: paduh
