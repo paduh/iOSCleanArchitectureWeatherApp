@@ -53,7 +53,7 @@ private extension RemoteCurrentDayWeatherForcast {
         CurrentDayWeatherForcast(
             id: id,
             weather: weather?.toModels(),
-            main: main?.toMain())
+            main: main?.toMainModels())
     }
 }
 
@@ -65,8 +65,8 @@ private extension Array where Element == RemoteWeather {
     }
 }
 
-private extension RemoteMain {
-    func toMain() -> Main {
+extension RemoteMain {
+    func toMainModels() -> Main {
         Main(temp: temp, tempMin: tempMin, tempMax: tempMax)
     }
 }
