@@ -105,7 +105,9 @@
 		54C5322C28E796A3000D441D /* iOSCleanArchitectureWeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				54C5325E28E79810000D441D /* WeatherForcastFeature */,
+				54C5327F28E9DAC7000D441D /* FiveDaysWeatherForcastFeature */,
+				54C5327D28E9DA52000D441D /* WeatherForcastFeature */,
+				54C5325E28E79810000D441D /* CurrentWeatherForcastFeature */,
 				54C5325D28E797FD000D441D /* WeatherForcastAPI */,
 				54C5322D28E796A3000D441D /* AppDelegate.swift */,
 				54C5322F28E796A3000D441D /* SceneDelegate.swift */,
@@ -131,25 +133,22 @@
 		54C5325D28E797FD000D441D /* WeatherForcastAPI */ = {
 			isa = PBXGroup;
 			children = (
+				54C5327E28E9DA83000D441D /* CurrentWeather */,
 				54C5326B28E7A157000D441D /* HTTPClient.swift */,
-				54C5326C28E7A157000D441D /* CurrentDayWeatherForcastMapper.swift */,
-				54C5326928E7A157000D441D /* RemoteCurrentDayWeatherForcastLoader.swift */,
 				54C5326A28E7A157000D441D /* URLSessionHTTPClient.swift */,
-				54C5326128E7986B000D441D /* RemoteCurrentDayWeatherForcast.swift */,
 				54C5326728E79EB9000D441D /* RemoteMain.swift */,
 			);
 			path = WeatherForcastAPI;
 			sourceTree = "<group>";
 		};
-		54C5325E28E79810000D441D /* WeatherForcastFeature */ = {
+		54C5325E28E79810000D441D /* CurrentWeatherForcastFeature */ = {
 			isa = PBXGroup;
 			children = (
 				54C5327128E7A255000D441D /* CurrentDayWeatherForcastLoader.swift */,
 				54C5325F28E79832000D441D /* CurrentDayWeatherForcast.swift */,
 				54C5326328E79D84000D441D /* WeatherType.swift */,
-				54C5326528E79DFE000D441D /* Main.swift */,
 			);
-			path = WeatherForcastFeature;
+			path = CurrentWeatherForcastFeature;
 			sourceTree = "<group>";
 		};
 		54C5327528E7AB9E000D441D /* Helpers */ = {
@@ -158,6 +157,31 @@
 				54C5327628E7AB9E000D441D /* XCTTestcase+MemoryLeakTracking.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		54C5327D28E9DA52000D441D /* WeatherForcastFeature */ = {
+			isa = PBXGroup;
+			children = (
+				54C5326528E79DFE000D441D /* Main.swift */,
+			);
+			path = WeatherForcastFeature;
+			sourceTree = "<group>";
+		};
+		54C5327E28E9DA83000D441D /* CurrentWeather */ = {
+			isa = PBXGroup;
+			children = (
+				54C5326128E7986B000D441D /* RemoteCurrentDayWeatherForcast.swift */,
+				54C5326928E7A157000D441D /* RemoteCurrentDayWeatherForcastLoader.swift */,
+				54C5326C28E7A157000D441D /* CurrentDayWeatherForcastMapper.swift */,
+			);
+			path = CurrentWeather;
+			sourceTree = "<group>";
+		};
+		54C5327F28E9DAC7000D441D /* FiveDaysWeatherForcastFeature */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FiveDaysWeatherForcastFeature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
