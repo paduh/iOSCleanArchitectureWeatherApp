@@ -83,8 +83,8 @@ class RemoteCurrentDayWeatherForcastUseCaseTests: XCTestCase {
 
         let url = URL(string: "any-url")!
         let client = HTTPClientSpy()
-        var sut: RemoteCurrentDayWeatherForcastUseCase? = RemoteCurrentDayWeatherForcastUseCase(url: url, client: client)
-
+        var sut: RemoteCurrentDayWeatherForcastUseCase?
+        sut = RemoteCurrentDayWeatherForcastUseCase(url: url, client: client)
         var capturedResult = [RemoteCurrentDayWeatherForcastUseCase.Result]()
         sut?.load { capturedResult.append($0) }
 
