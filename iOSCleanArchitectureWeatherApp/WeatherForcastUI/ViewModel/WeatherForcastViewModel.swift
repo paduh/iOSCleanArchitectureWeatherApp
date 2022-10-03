@@ -35,6 +35,8 @@ final class WeatherForcastViewModel: WeatherForcastViewModelDelegate {
 
     private let dispatchGroup = DispatchGroup()
 
+    // MARK: - Life Cycle
+
     init(
         currentDayWeatherForcastLoader: CurrentDayWeatherForcastLoader,
         fiveDaysWeatherForcastLoader: FiveDaysWeatherForcastLoader) {
@@ -53,6 +55,8 @@ final class WeatherForcastViewModel: WeatherForcastViewModelDelegate {
 
     }
 
+    // MARK: - Load Current Day Weather Forcast
+
     private func loadCurrentDayWeatherForcast(lat: Double, long: Double) {
         dispatchGroup.enter()
 
@@ -69,6 +73,8 @@ final class WeatherForcastViewModel: WeatherForcastViewModelDelegate {
             }
         }
     }
+
+    // MARK: - Load Five Days Weather Forcast
 
     private func loadFiveDaysWeatherForcast(lat: Double, long: Double) {
         dispatchGroup.enter()
