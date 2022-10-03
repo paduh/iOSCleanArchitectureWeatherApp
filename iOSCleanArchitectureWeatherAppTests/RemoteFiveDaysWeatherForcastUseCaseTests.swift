@@ -22,7 +22,7 @@ class RemoteFiveDaysWeatherForcastUseCaseTests: XCTestCase {
         let url = URL(string: "any-url.com")!
         let (sut, client) = makeSUT(url: url)
 
-        sut.load { _ in}
+        sut.load(lat: 111, long: 222) { _ in}
 
         XCTAssertEqual([url], client.requestedUrls)
     }
@@ -31,8 +31,8 @@ class RemoteFiveDaysWeatherForcastUseCaseTests: XCTestCase {
         let url = URL(string: "any-url.com")!
         let (sut, client) = makeSUT(url: url)
 
-        sut.load { _ in}
-        sut.load { _ in}
+        sut.load(lat: 111, long: 222) { _ in}
+        sut.load(lat: 111, long: 222) { _ in}
 
         XCTAssertEqual(client.requestedUrls, [url, url])
     }
@@ -91,7 +91,7 @@ class RemoteFiveDaysWeatherForcastUseCaseTests: XCTestCase {
         var sut: RemoteFiveDaysWeatherForcastUseCase? = RemoteFiveDaysWeatherForcastUseCase(url: url, client: client)
 
         var capturedResult = [RemoteFiveDaysWeatherForcastUseCase.Result]()
-        sut?.load { capturedResult.append($0) }
+        sut?.load(lat: 111, long: 222) { capturedResult.append($0) }
 
         sut = nil
         client.complete(withStatusCode: 200, data: makeItemsJSON([]))
@@ -161,7 +161,7 @@ class RemoteFiveDaysWeatherForcastUseCaseTests: XCTestCase {
 
         let exp = expectation(description: "wait for load completion")
 
-        sut.load { receivedResult in
+        sut.load(lat: 111, long: 222) { receivedResult in
             switch (receivedResult, expectedResult) {
             case let (.success(receivedItems), .success(expectedItems)):
                 XCTAssertEqual(receivedItems, expectedItems, file: file, line: line)
@@ -188,7 +188,12 @@ class RemoteFiveDaysWeatherForcastUseCaseTests: XCTestCase {
             messages.map { $0.url}
         }
 
-        func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
+    func get(
+            from url: URL,
+            lat: Double = 1111,
+            long: Double = 3333,
+            completion: @escaping (Result<(Data, HTTPURLResponse), Error>
+            ) -> Void) -> HTTPClientTask {
             messages.append((url, completion))
 
             return URLSessionTaskWrapperSpy(wrapped: URLSessionTask())

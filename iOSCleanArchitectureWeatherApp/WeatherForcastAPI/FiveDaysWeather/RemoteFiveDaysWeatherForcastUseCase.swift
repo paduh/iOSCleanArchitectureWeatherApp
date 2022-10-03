@@ -25,8 +25,8 @@ public final class RemoteFiveDaysWeatherForcastUseCase: FiveDaysWeatherForcastLo
         self.client = client
     }
 
-    public func load(completion: @escaping (Result) -> Void) {
-        _ = client.get(from: url, completion: { [weak self] result in
+    public func load(lat: Double, long: Double, completion: @escaping (Result) -> Void) {
+        _ = client.get(from: url, lat: lat, long: long, completion: { [weak self] result in
             guard let self = self else { return }
             switch result {
             case let .success((data, response)):

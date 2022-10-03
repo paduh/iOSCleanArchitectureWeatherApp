@@ -29,13 +29,25 @@ public struct FiveDaysWeatherForcast: Equatable {
         self.weather = weather
         self.dtTxt = dtTxt
     }
+
+    var currentTemp: String? {
+        main?.temp?.celciusTemp
+    }
+
+    var weatherType: WeatherType? {
+        if let main = weather?.first?.main, let weatherType = WeatherType(rawValue: main) {
+            return weatherType
+        } else {
+            return nil
+        }
+    }
 }
 
 // MARK: Five Days Weather
 
 public struct FiveDaysWeather: Equatable {
     public let id: Int?
-    public var main: String?
+    public let main: String?
 
     public init(
         id: Int?,

@@ -17,5 +17,5 @@ public enum LoadFiveDaysWeatherForcastResult {
 // MARK: - CurrentDayWeatherForcastLoader
 
 public protocol FiveDaysWeatherForcastLoader {
-    func load(completion: @escaping (LoadFiveDaysWeatherForcastResult) -> Void)
+    func load(lat: Double, long: Double, completion: @escaping (LoadFiveDaysWeatherForcastResult) -> Void)
 }

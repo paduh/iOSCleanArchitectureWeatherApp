@@ -21,6 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see
         // `application:configurationForConnectingSceneSession` instead).
             guard (scene as? UIWindowScene) != nil else { return }
+
+            setupDependencies()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -52,4 +54,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+}
+
+extension SceneDelegate {
+    func setupDependencies() {
+        let appCoordinator = AppCoordinator(window: window)
+        appCoordinator.start()
+    }
 }

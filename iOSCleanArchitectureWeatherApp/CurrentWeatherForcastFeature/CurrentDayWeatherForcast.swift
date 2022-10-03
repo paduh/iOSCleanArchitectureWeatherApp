@@ -23,6 +23,26 @@ public struct CurrentDayWeatherForcast: Equatable {
         self.main = main
         self.id = id
     }
+
+    var maxTemp: String? {
+        main?.tempMax?.celciusTemp
+    }
+
+    var minTemp: String? {
+        main?.tempMin?.celciusTemp
+    }
+
+    var currentTemp: String? {
+        main?.temp?.celciusTemp
+    }
+
+    var weatherType: WeatherType? {
+        if let main = weather?.first?.main, let weatherType = WeatherType(rawValue: main) {
+            return weatherType
+        } else {
+            return nil
+        }
+    }
 }
 
 // MARK: - CurrentDayWeather

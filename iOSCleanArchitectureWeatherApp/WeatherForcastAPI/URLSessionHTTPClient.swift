@@ -26,8 +26,17 @@ public final class URLSessionHTTPClient: HTTPClient {
         }
     }
 
-    public func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
-        let parameters: [String: CustomStringConvertible] = [:]
+    public func get(
+        from url: URL,
+        lat: Double,
+        long: Double,
+        completion: @escaping (HTTPClient.Result
+        ) -> Void) -> HTTPClientTask {
+        let parameters: [String: CustomStringConvertible] = [
+            "lat": lat,
+            "lon": long,
+            "appid": Constant.apiKey
+            ]
 
         var components = URLComponents(url: url, resolvingAgainstBaseURL: false)!
             components.queryItems = parameters.keys.map { key in

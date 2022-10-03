@@ -30,7 +30,7 @@ class URLSessionHTTPClientTest: XCTestCase {
             exp.fulfill()
         }
 
-        _ = makeSUT().get(from: url) { _ in }
+        _ = makeSUT().get(from: url, lat: 222, long: 444) { _ in }
 
         wait(for: [exp], timeout: 1.0)
     }
@@ -63,9 +63,9 @@ class URLSessionHTTPClientTest: XCTestCase {
 
         let exp = expectation(description: "Wait for success completion")
 
-        _ = makeSUT().get(from: anyURL()) { result in
+        _ = makeSUT().get(from: anyURL(), lat: 111, long: 333) { result in
             switch result {
-            case let .success((receivedData, receivedResponse)):
+            case let .success((receivedData, _)):
                 XCTAssertEqual(receivedData, data)
             default:
                 XCTFail("Expected success got \(result) instead")
@@ -120,7 +120,7 @@ class URLSessionHTTPClientTest: XCTestCase {
         let exp = expectation(description: "Wait for completion")
 
         var receivedError: Error?
-        _ = sut.get(from: anyURL()) { result in
+        _ = sut.get(from: anyURL(), lat: 111, long: 222) { result in
             switch result {
             case let .failure(error):
                 receivedError = error
