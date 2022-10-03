@@ -16,7 +16,7 @@ protocol WeatherForcastViewModelDelegate: AnyObject {
     var onFiveDaysWeatherForcastLoad: (([FiveDaysWeatherForcast]) -> Void)? { get set }
     var onError: ((String) -> Void)? { get set }
 
-    func loadWeatherForcast()
+    func loadWeatherForcast(lat: Double, long: Double)
     func viewDidLoad()
 }
 
@@ -49,11 +49,11 @@ final class WeatherForcastViewModel: WeatherForcastViewModelDelegate {
          }
     }
 
-    func loadWeatherForcast() {
+    func loadWeatherForcast(lat: Double, long: Double) {
 
     }
 
-    private func loadCurrentDayWeatherForcast() {
+    private func loadCurrentDayWeatherForcast(lat: Double, long: Double) {
         dispatchGroup.enter()
         currentDayWeatherForcastLoader.load { [weak self] result in
             guard let self = self else { return }
@@ -69,7 +69,7 @@ final class WeatherForcastViewModel: WeatherForcastViewModelDelegate {
         }
     }
 
-    private func loadFiveDaysWeatherForcast() {
+    private func loadFiveDaysWeatherForcast(lat: Double, long: Double) {
         dispatchGroup.enter()
 
         fiveDaysWeatherForcastLoader.load { [weak self] result in
