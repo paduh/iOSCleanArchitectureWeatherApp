@@ -22,7 +22,7 @@ class RemoteCurrentDayWeatherForcastUseCaseTests: XCTestCase {
         let url = URL(string: "any-url.com")!
         let (sut, client) = makeSUT(url: url)
 
-        sut.load { _ in}
+        sut.load(lat: 111, long: 222) { _ in}
 
         XCTAssertEqual([url], client.requestedUrls)
     }
@@ -31,8 +31,8 @@ class RemoteCurrentDayWeatherForcastUseCaseTests: XCTestCase {
         let url = URL(string: "any-url.com")!
         let (sut, client) = makeSUT(url: url)
 
-        sut.load { _ in}
-        sut.load { _ in}
+        sut.load(lat: 111, long: 222) { _ in}
+        sut.load(lat: 111, long: 222) { _ in}
 
         XCTAssertEqual(client.requestedUrls, [url, url])
     }
@@ -86,7 +86,7 @@ class RemoteCurrentDayWeatherForcastUseCaseTests: XCTestCase {
         var sut: RemoteCurrentDayWeatherForcastUseCase?
         sut = RemoteCurrentDayWeatherForcastUseCase(url: url, client: client)
         var capturedResult = [RemoteCurrentDayWeatherForcastUseCase.Result]()
-        sut?.load { capturedResult.append($0) }
+        sut?.load(lat: 111, long: 333) { capturedResult.append($0) }
 
         sut = nil
         client.complete(withStatusCode: 200, data: makeItemsJSON([:]))
@@ -143,7 +143,7 @@ class RemoteCurrentDayWeatherForcastUseCaseTests: XCTestCase {
 
         let exp = expectation(description: "wait for load completion")
 
-        sut.load { receivedResult in
+        sut.load(lat: 222, long: 333) { receivedResult in
             switch (receivedResult, expectedResult) {
             case let (.success(receivedItems), .success(expectedItems)):
                 XCTAssertEqual(receivedItems, expectedItems, file: file, line: line)
@@ -170,7 +170,12 @@ class RemoteCurrentDayWeatherForcastUseCaseTests: XCTestCase {
             messages.map { $0.url}
         }
 
-        func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
+        func get(
+            from url: URL,
+            lat: Double = 1111,
+            long: Double = 222,
+            completion: @escaping (Result<(Data, HTTPURLResponse), Error>
+            ) -> Void) -> HTTPClientTask {
             messages.append((url, completion))
 
             return URLSessionTaskWrapperSpy(wrapped: URLSessionTask())

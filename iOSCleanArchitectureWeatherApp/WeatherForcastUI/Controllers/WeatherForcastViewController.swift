@@ -22,7 +22,11 @@ final class WeatherForcastViewController: UIViewController {
     var viewModel: CurrentDayWeatherForcastViewModel? {
         didSet {
             if let viewModel = viewModel {
-                headerView.setup(with: CurrentDayWeatherForcastViewModel(currentDayWeatherForcast: viewModel.currentDayWeatherForcast))
+                headerView
+                    .setup(
+                        with: CurrentDayWeatherForcastViewModel(
+                            currentDayWeatherForcast: viewModel.currentDayWeatherForcast
+                        ))
                 switch viewModel.weatherType {
                 case .rain:
                     tableView.backgroundColor = UIColor.init(named: "rainy-colour")

@@ -21,12 +21,14 @@ final class AppCoordinator: CoordinatorProtocol {
     }()
 
     private lazy var currentDayWeatherForcastLoader: CurrentDayWeatherForcastLoader = {
-        let loader = RemoteCurrentDayWeatherForcastUseCase(url: URL(string: "https://api.openweathermap.org/data/2.5/weather")!, client: httpClient)
+        let loader = RemoteCurrentDayWeatherForcastUseCase(
+            url: URL(string: "https://api.openweathermap.org/data/2.5/weather")!, client: httpClient)
         return MainQueueDispatchDecorator(decoratee: loader)
     }()
 
     private lazy var fiveDaysWeatherForcastLoader: FiveDaysWeatherForcastLoader = {
-        let loader = RemoteFiveDaysWeatherForcastUseCase(url: URL(string: "https://api.openweathermap.org/data/2.5/forecast")!, client: httpClient)
+        let loader = RemoteFiveDaysWeatherForcastUseCase(
+            url: URL(string: "https://api.openweathermap.org/data/2.5/forecast")!, client: httpClient)
         return MainQueueDispatchDecorator(decoratee: loader)
     }()
 
@@ -35,7 +37,9 @@ final class AppCoordinator: CoordinatorProtocol {
     }
 
     func start() {
-        let feedViewController = FeedUIComposer.feedComposeWith(currentWeatherLoader: currentDayWeatherForcastLoader, fiveDaysWeatherLoader: fiveDaysWeatherForcastLoader)
+        let feedViewController = FeedUIComposer.feedComposeWith(
+            currentWeatherLoader: currentDayWeatherForcastLoader,
+            fiveDaysWeatherLoader: fiveDaysWeatherForcastLoader)
 
         feedViewController.onError = { error in
             self.showAlert(with: error)
