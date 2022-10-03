@@ -39,7 +39,7 @@ The separation described above ensures that the Application Logic depends on abs
 It should be covered by Unit Tests
 
 ###  Model - plain Swift classes / structs
-Models objects used by your application such as Post, Comment etc
+Models objects used by your application
 
 ## CI/CD - 
  - Github Actions
@@ -49,7 +49,7 @@ Models objects used by your application such as Post, Comment etc
  - Unit test for viemodel
  - Make the UseCase Generic so that it can be reused for both current weather and five weather forecast, by injecting their respective mappers
  - Refactor hard coded ui string, assets names and colour values into a dedicated composble types so that it is maintainable and scalable
- - Unit CoreLocationAdapter
+ - Unit test CoreLocationAdapter
 
 ## Design Patterns Used -
  
