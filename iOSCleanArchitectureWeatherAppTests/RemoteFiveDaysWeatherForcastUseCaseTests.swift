@@ -124,7 +124,7 @@ class RemoteFiveDaysWeatherForcastUseCaseTests: XCTestCase {
     -> (model: FiveDaysWeatherForcast, json: [String: Any]) {
         let item = FiveDaysWeatherForcast(
             main: main, weather: [weather], dtTxt: dtTxt)
-        
+
         let weatherItemJSON: [[String: Any]] = [[
             "id": weather.id,
             "main": weather.main
@@ -135,13 +135,13 @@ class RemoteFiveDaysWeatherForcastUseCaseTests: XCTestCase {
             "temp_min": item.main?.tempMin,
             "temp_max": item.main?.tempMax
         ].compactMapValues { $0 }
-        
+
         let itemJSON: [String: Any] = [
             "main": mainItemJSON,
             "weather": weatherItemJSON,
             "dt_txt": item.dtTxt
         ].compactMapValues { $0 }
-        
+
         return (model: item, json: itemJSON)
     }
 
@@ -150,7 +150,7 @@ class RemoteFiveDaysWeatherForcastUseCaseTests: XCTestCase {
             "list": items
         ]
         return try! JSONSerialization.data(withJSONObject: itemsJSON)
-        
+
     }
     func expect(
         _ sut: RemoteFiveDaysWeatherForcastUseCase,
