@@ -21,10 +21,10 @@ Presentation Logic
  - Usually we have one View Model per scene (view controller)
  - It doesn't reference the concrete type of the View, but rather it references the View protocol that is implemented usually by a UIViewController subclass
  - It is a Swift class and not reference any iOS framework classes - this makes it easier to reuse it maybe in a macOS application
- - It should be covered by Unit Tests, NB: No unit test done due to time constraint
+ - It should be covered by Unit Tests
  
  ###  UI Composer - injects the dependency object graph into the scene (view controller)
- - Usually it contains very simple logic and we don't need to write Unit Tests for it
+ - Usually it contains very simple logic
  
  ###  Coordinator - contains navigation / flow logic from one scene (view controller) to another
  - In some communities / blog posts it might be referred to as a FlowControlleror/ Router/ Coordinator
@@ -63,8 +63,6 @@ Models objects used by your application such as Post, Comment etc
  - CodeCov
  - SwiftLint
  - Githuub Action - for CI 
- - Factory
-
 
 ##  BDD Specs
 
@@ -92,8 +90,6 @@ Models objects used by your application such as Post, Comment etc
     When the customer request to see the present and five days forecast
     Then the app should access the users current location and use it to fetch the forcast and display the present day and five days forecast from remote and replace the cache with the new forcast as well as date and time it was saved
 
-
-
 ### Scenerios (Acceptance Criteria)
 
     Given the customer does not have connectivity
@@ -103,7 +99,6 @@ Models objects used by your application such as Post, Comment etc
     Given the customer does not have connectivity and the cache is empty
     When the customer requests to see weather forecast
     Then the app should display an error message
-
 
 ###  Use Cases
 
