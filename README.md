@@ -63,8 +63,6 @@ Models objects used by your application such as Post, Comment etc
  - CodeCov
  - SwiftLint
  - Githuub Action - for CI 
- - Factory
-
 
 ##  BDD Specs
 
