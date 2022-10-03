@@ -55,6 +55,7 @@ final class WeatherForcastViewModel: WeatherForcastViewModelDelegate {
 
     private func loadCurrentDayWeatherForcast(lat: Double, long: Double) {
         dispatchGroup.enter()
+
         currentDayWeatherForcastLoader.load { [weak self] result in
             guard let self = self else { return }
 
