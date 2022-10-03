@@ -46,6 +46,7 @@
 		54C532AA28EB3E0A000D441D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C532A828EB3E0A000D441D /* AppCoordinator.swift */; };
 		54C532AD28EB4133000D441D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C532AC28EB4133000D441D /* Constant.swift */; };
 		54C532AF28EB63EA000D441D /* FiveDaysWeatherForcastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C532AE28EB63EA000D441D /* FiveDaysWeatherForcastViewModel.swift */; };
+		54C532B228EB8444000D441D /* CoreLocationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C532B128EB8444000D441D /* CoreLocationAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		54C532A828EB3E0A000D441D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		54C532AC28EB4133000D441D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		54C532AE28EB63EA000D441D /* FiveDaysWeatherForcastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDaysWeatherForcastViewModel.swift; sourceTree = "<group>"; };
+		54C532B128EB8444000D441D /* CoreLocationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		54C5322C28E796A3000D441D /* iOSCleanArchitectureWeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				54C532B028EB842C000D441D /* CLLocationAdapter */,
 				54C532AB28EB4125000D441D /* Utility */,
 				54C532A628EB3DDF000D441D /* AppFlow */,
 				54C5328D28EAD2C3000D441D /* WeatherForcastUI */,
@@ -305,6 +308,14 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		54C532B028EB842C000D441D /* CLLocationAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				54C532B128EB8444000D441D /* CoreLocationAdapter.swift */,
+			);
+			path = CLLocationAdapter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -455,6 +466,7 @@
 				54C5326428E79D84000D441D /* WeatherType.swift in Sources */,
 				54C5329428EADAC7000D441D /* WeatherForcastRefreshViewController.swift in Sources */,
 				54C5326628E79DFE000D441D /* Main.swift in Sources */,
+				54C532B228EB8444000D441D /* CoreLocationAdapter.swift in Sources */,
 				54C5327228E7A255000D441D /* CurrentDayWeatherForcastLoader.swift in Sources */,
 				54C5323028E796A3000D441D /* SceneDelegate.swift in Sources */,
 				54C5329C28EAE136000D441D /* WeatherForcastCell.swift in Sources */,

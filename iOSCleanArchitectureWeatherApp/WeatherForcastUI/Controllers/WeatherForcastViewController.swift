@@ -17,13 +17,7 @@ final class WeatherForcastViewController: UIViewController {
         static let headerViewHeightConstraint: CGFloat = 340
     }
 
-    private var activityIndicator: UIActivityIndicatorView? = {
-        if #available(iOS 13.0, *) {
-            return UIActivityIndicatorView(style: .medium)
-        } else {
-            return UIActivityIndicatorView(style: .gray)
-        }
-    }()
+    private var activityIndicator: UIActivityIndicatorView?
 
     var viewModel: CurrentDayWeatherForcastViewModel? {
         didSet {
@@ -41,6 +35,8 @@ final class WeatherForcastViewController: UIViewController {
             }
         }
     }
+
+    private var coreLocationAdapter: CoreLocationAdapter?
     private var headerView = WeatherForcastHeaderView()
     private var tableView: UITableView!
     private var refreshController: WeatherForcastRefreshViewController?
@@ -53,18 +49,29 @@ final class WeatherForcastViewController: UIViewController {
 
     var onError: ((String) -> Void)?
 
-    // MARK: - LifeCycle
+    // MARK: - Life Cycle
 
-    convenience init(refreshController: WeatherForcastRefreshViewController) {
+    convenience init(refreshController: WeatherForcastRefreshViewController,
+                     coreLocationAdapter: CoreLocationAdapter = CoreLocationAdapter()) {
         self.init()
         initializeView()
         addConstraints()
+
         self.refreshController = refreshController
+        self.coreLocationAdapter = coreLocationAdapter
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator = refreshController?.view
+    }
+
+    override public func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        coreLocationAdapter?.determineMyCurrentLocation()
+        coreLocationAdapter?.locationFetchCompletions = { [weak self] lat, long in
+            self?.refreshController?.loadWeatherForcast(lat: lat, long: long)
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

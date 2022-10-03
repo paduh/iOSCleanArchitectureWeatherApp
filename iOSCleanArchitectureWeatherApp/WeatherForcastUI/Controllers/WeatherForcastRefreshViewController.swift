@@ -11,15 +11,27 @@ import UIKit
 // MARK: - WeatherForcastRefreshViewController
 
 final class WeatherForcastRefreshViewController: NSObject {
-    private(set) lazy var view: UIActivityIndicatorView = binded(UIActivityIndicatorView())
+    private(set) lazy var view: UIActivityIndicatorView = binded(activityIndicator)
     private var viewModel: WeatherForcastFeedViewModelDelegate
+
+    private var activityIndicator: UIActivityIndicatorView = {
+        if #available(iOS 13.0, *) {
+            return UIActivityIndicatorView(style: .medium)
+        } else {
+            return UIActivityIndicatorView(style: .gray)
+        }
+    }()
 
     // MARK: - LifeCycle
 
-    init(viewModel: WeatherForcastFeedViewModelDelegate) {
+    init(
+        viewModel: WeatherForcastFeedViewModelDelegate) {
         self.viewModel = viewModel
         viewModel.viewDidLoad()
-        viewModel.loadWeatherForcast(lat: 44.34, long: 10.99)
+    }
+
+    func loadWeatherForcast(lat: Double, long: Double) {
+        viewModel.loadWeatherForcast(lat: lat, long: long)
     }
 
     private func binded(_ view: UIActivityIndicatorView) -> UIActivityIndicatorView {

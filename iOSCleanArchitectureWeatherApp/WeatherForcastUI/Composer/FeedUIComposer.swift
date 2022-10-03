@@ -20,7 +20,10 @@ final class FeedUIComposer {
 
     private init() {}
 
-    static func feedComposeWith(currentWeatherLoader: CurrentDayWeatherForcastLoader, fiveDaysWeatherLoader: FiveDaysWeatherForcastLoader) -> WeatherForcastViewController {
+    static func feedComposeWith(
+        currentWeatherLoader: CurrentDayWeatherForcastLoader,
+        fiveDaysWeatherLoader: FiveDaysWeatherForcastLoader
+    ) -> WeatherForcastViewController {
         let feedViewModel = WeatherForcastFeedViewModel(
             currentDayWeatherForcastLoader: currentWeatherLoader,
             fiveDaysWeatherForcastLoader: fiveDaysWeatherLoader)
@@ -29,7 +32,8 @@ final class FeedUIComposer {
         let weatherForcastViewController = WeatherForcastViewController(refreshController: refreshController)
 
         feedViewModel.onCurrentDayWeatherForcastLoad = { [weak weatherForcastViewController] currentDayWeatherForcast in
-            let currentDayWeatherForcastViewModel = CurrentDayWeatherForcastViewModel(currentDayWeatherForcast: currentDayWeatherForcast)
+            let currentDayWeatherForcastViewModel = CurrentDayWeatherForcastViewModel(
+                currentDayWeatherForcast: currentDayWeatherForcast)
             weatherForcastViewController?.viewModel = currentDayWeatherForcastViewModel
         }
 

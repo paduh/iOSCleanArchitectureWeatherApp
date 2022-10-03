@@ -50,7 +50,7 @@ public final class RemoteFiveDaysWeatherForcastUseCase: FiveDaysWeatherForcastLo
 private extension Array where Element == RemoteFiveDaysWeatherForcast {
     func toDomainModels() -> [FiveDaysWeatherForcast] {
         map { FiveDaysWeatherForcast(
-            main: $0.main?.toMainModels(), weather: $0.weather?.toModels(), dtTxt: $0.dtTxt, dt: $0.dt)}
+            main: $0.main?.toMainModels(), weather: $0.weather?.toModels(), dtTxt: $0.dtTxt)}
     }
 }
 
