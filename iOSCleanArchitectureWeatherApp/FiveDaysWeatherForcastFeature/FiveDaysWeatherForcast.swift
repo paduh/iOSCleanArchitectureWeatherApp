@@ -13,6 +13,7 @@ public struct FiveDaysWeatherForcast: Equatable {
     public let main: Main?
     public let weather: [FiveDaysWeather]?
     public let dtTxt: String?
+    public let dt: Int?
 
     private enum CodingKeys: String, CodingKey {
         case main
@@ -23,11 +24,25 @@ public struct FiveDaysWeatherForcast: Equatable {
     public init(
         main: Main?,
         weather: [FiveDaysWeather]?,
-        dtTxt: String?
+        dtTxt: String?,
+        dt: Int?
     ) {
         self.main = main
         self.weather = weather
         self.dtTxt = dtTxt
+        self.dt = dt
+    }
+
+    var currentTemp: String? {
+        main?.temp?.celciusTemp
+    }
+
+    var weatherType: WeatherType? {
+        if let main = weather?.first?.main, let weatherType = WeatherType(rawValue: main) {
+            return weatherType
+        } else {
+            return nil
+        }
     }
 }
 
@@ -35,7 +50,7 @@ public struct FiveDaysWeatherForcast: Equatable {
 
 public struct FiveDaysWeather: Equatable {
     public let id: Int?
-    public var main: String?
+    public let main: String?
 
     public init(
         id: Int?,

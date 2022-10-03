@@ -13,21 +13,25 @@ import Foundation
      let main: RemoteMain?
      let weather: [RemoteFiveDaysWeather]?
      let dtTxt: String?
+     let dt: Int?
 
     enum CodingKeys: String, CodingKey {
         case main
         case weather
+        case dt
         case dtTxt = "dt_txt"
     }
 
      init(
         main: RemoteMain?,
         weather: [RemoteFiveDaysWeather]?,
-        dtTxt: String?
+        dtTxt: String?,
+        dt: Int?
     ) {
         self.main = main
         self.weather = weather
         self.dtTxt = dtTxt
+        self.dt = dt
     }
 }
 

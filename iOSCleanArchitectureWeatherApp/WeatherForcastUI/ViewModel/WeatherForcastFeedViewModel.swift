@@ -1,5 +1,5 @@
 //
-//  WeatherForcastViewModel.swift
+//  WeatherForcastFeedViewModel.swift
 //  iOSCleanArchitectureWeatherApp
 //
 //  Created by Perfect Aduh on 02/10/2022.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-// MARK: - WeatherForcastViewModelDelegate
+// MARK: - Weather Forcast Feed ViewModel Delegate
 
-protocol WeatherForcastViewModelDelegate: AnyObject {
+protocol WeatherForcastFeedViewModelDelegate: AnyObject {
     var onLoadingStateChange: ((Bool) -> Void)? { get set }
     var onCurrentDayWeatherForcastLoad: ((CurrentDayWeatherForcast) -> Void)? { get set }
     var onFiveDaysWeatherForcastLoad: (([FiveDaysWeatherForcast]) -> Void)? { get set }
@@ -20,9 +20,9 @@ protocol WeatherForcastViewModelDelegate: AnyObject {
     func viewDidLoad()
 }
 
-// MARK: - WeatherForcastViewModel
+// MARK: - Weather Forcast ViewModel
 
-final class WeatherForcastViewModel: WeatherForcastViewModelDelegate {
+final class WeatherForcastFeedViewModel: WeatherForcastFeedViewModelDelegate {
     typealias Observer<T> = (T) -> Void
 
     var onLoadingStateChange: Observer<Bool>?
@@ -52,7 +52,8 @@ final class WeatherForcastViewModel: WeatherForcastViewModelDelegate {
     }
 
     func loadWeatherForcast(lat: Double, long: Double) {
-
+        loadCurrentDayWeatherForcast(lat: lat, long: long)
+        loadFiveDaysWeatherForcast(lat: lat, long: long)
     }
 
     // MARK: - Load Current Day Weather Forcast
@@ -60,7 +61,7 @@ final class WeatherForcastViewModel: WeatherForcastViewModelDelegate {
     private func loadCurrentDayWeatherForcast(lat: Double, long: Double) {
         dispatchGroup.enter()
 
-        currentDayWeatherForcastLoader.load { [weak self] result in
+        currentDayWeatherForcastLoader.load(lat: lat, long: long) { [weak self] result in
             guard let self = self else { return }
 
             self.dispatchGroup.leave()
@@ -79,7 +80,7 @@ final class WeatherForcastViewModel: WeatherForcastViewModelDelegate {
     private func loadFiveDaysWeatherForcast(lat: Double, long: Double) {
         dispatchGroup.enter()
 
-        fiveDaysWeatherForcastLoader.load { [weak self] result in
+        fiveDaysWeatherForcastLoader.load(lat: lat, long: long) { [weak self] result in
             guard let self = self else { return }
 
             self.dispatchGroup.leave()
@@ -91,5 +92,15 @@ final class WeatherForcastViewModel: WeatherForcastViewModelDelegate {
                 self.onFiveDaysWeatherForcastLoad?(weatherForcast)
             }
         }
+    }
+}
+
+extension Double {
+    var string: String {
+        String(self)
+    }
+
+    var celciusTemp: String {
+        String(format: "%.0f", self - 273.15)
     }
 }
